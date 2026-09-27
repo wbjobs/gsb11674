@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Font 加载管理器</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Web Font 加载管理器</h1>
+    <p id="summary" class="summary">初始化中…</p>
+    <div class="actions">
+      <button id="reload-btn" type="button">重新加载全部</button>
+      <button id="clear-records-btn" type="button">清空回退记录</button>
+    </div>
+  </header>
+
+  <p id="overflow-notice" class="notice" hidden></p>
+
+  <main id="font-cards" class="grid"></main>
+
+  <section class="records">
+    <h2>回退记录（IndexedDB 持久化）</h2>
+    <table id="fallback-table">
+      <thead>
+        <tr><th>时间</th><th>字体</th><th>回退路径</th><th>状态</th><th>原因</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

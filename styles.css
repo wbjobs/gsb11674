@@ -1,0 +1,116 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #f4f6f8;
+  color: #1f2933;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  padding: 16px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.topbar h1 { font-size: 20px; margin: 0; }
+.summary { margin: 0; color: #64748b; font-size: 14px; }
+
+.actions { margin-left: auto; display: flex; gap: 8px; }
+
+button {
+  padding: 6px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+}
+button:hover { background: #f1f5f9; }
+
+.notice {
+  margin: 12px 24px 0;
+  padding: 10px 14px;
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.card h3 { margin: 0; font-size: 15px; }
+
+.badge {
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #334155;
+}
+.badge[data-status="loaded"] { background: #dcfce7; color: #15803d; }
+.badge[data-status="loading"],
+.badge[data-status="queued"] { background: #dbeafe; color: #1d4ed8; }
+.badge[data-status="fallback"] { background: #fef3c7; color: #b45309; }
+.badge[data-status="timeout"],
+.badge[data-status="cors-blocked"],
+.badge[data-status="unsupported"],
+.badge[data-status="failed"] { background: #fee2e2; color: #b91c1c; }
+
+.preview {
+  width: 100%;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  margin: 10px 0 0;
+  font-size: 12px;
+}
+.meta div { display: flex; gap: 6px; }
+.meta dt { color: #94a3b8; white-space: nowrap; }
+.meta dd { margin: 0; word-break: break-all; }
+.meta .stack { font-family: monospace; font-size: 11px; }
+
+.records { padding: 8px 24px 32px; }
+.records h2 { font-size: 16px; }
+
+#fallback-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 13px;
+}
+#fallback-table th, #fallback-table td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+#fallback-table th { background: #f8fafc; color: #475569; }
+#fallback-table .empty { text-align: center; color: #94a3b8; }
