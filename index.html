@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Font 加载管理器</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Web Font 加载管理器</h1>
+    <p class="subtitle">FontFace API · 超时中断 · CORS 处理 · 格式降级 · 回退链 · IndexedDB 记录 · Canvas 预览</p>
+  </header>
+
+  <section class="controls">
+    <button id="btn-load">开始加载全部字体</button>
+    <button id="btn-destroy" class="warn">清理（模拟页面卸载）</button>
+    <button id="btn-clear" class="ghost">清空历史记录</button>
+    <span id="summary" class="summary"></span>
+  </section>
+
+  <section>
+    <h2>字体状态</h2>
+    <div id="font-grid" class="font-grid"></div>
+  </section>
+
+  <section>
+    <h2>回退记录</h2>
+    <div id="fallback-list" class="record-list"><p class="empty">暂无回退记录</p></div>
+  </section>
+
+  <section>
+    <h2>历史加载记录（IndexedDB）</h2>
+    <div id="history-list" class="record-list"><p class="empty">暂无历史记录</p></div>
+  </section>
+
+  <section>
+    <h2>事件日志</h2>
+    <div id="event-log" class="event-log"></div>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
